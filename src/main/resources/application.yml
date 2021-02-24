@@ -1,0 +1,35 @@
+server:
+  port: 27785
+
+spring:
+  # 数据源的配置
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/source?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    username: super
+    password: super
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+
+dataX:
+  # 迁移的数据库名称
+  dbName: clas
+  source:
+    # 数据源地址
+    url: jdbc:mysql://127.0.0.1:3306/source?characterEncoding=utf8
+    # 数据源账号
+    username: super
+    # 数据源密码
+    pwd: super
+  target:
+    # 目的地址
+    url: jdbc:mysql://127.0.0.1:3306/target?characterEncoding=utf8
+    # 目的账号
+    username: super
+    # 目的密码
+    pwd: super
+  # 文件夹目录，注意最后的斜线
+  filePath: E:\JsonFiles\
+  # 执行json的路径
+  pyPath: /data/datax/jsons/
